@@ -1,0 +1,266 @@
+.counterFrame {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counterHead {
+  z-index: 1;
+  width: 150px;
+  height: 190px;
+  background-color: black;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-end-start-radius: 50%;
+  border-end-end-radius: 50%;
+  box-shadow: 0 0 10px rgb(164, 137, 137);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.display {
+  margin-top: 20px;
+
+  width: 70%;
+  height: 50px;
+  background-color: gainsboro;
+  box-shadow: 0 0 5px white;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 5px;
+  border-radius: 2px;
+
+}
+
+.digits {
+  padding-right: 10px;
+}
+
+.buttons {
+  padding-top: 35px;
+  position: relative;
+}
+
+.incrementBtn {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 30px;
+  cursor: pointer;
+  border: 5px solid rgba(202, 202, 202, 0.833);
+}
+
+.resetBtn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid rgba(202, 202, 202, 0.833);
+  box-shadow: 1px 1px 5px silver;
+}
+
+.counterUpperStrap {
+  height: 100px;
+  width: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0 0 4px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px 0px
+}
+
+.hole {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(206, 206, 206);
+  margin-top: 20px;
+}
+
+.counterBottomStrap {
+  height: 100px;
+  width: 60px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0 0 4px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  margin-top: -10px;
+  z-index: 0;
+}
+
+.holeConnect {
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid rgb(155, 155, 155);
+  ;
+}
+
+.dropDown {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  position: absolute;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  left: 110px;
+  top: 0;
+}
+
+
+.locationBox {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid black;
+  padding: 10px;
+  height: 42px;
+  width: 250px;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: white;
+  padding-right: 10px;
+}
+
+.downArrowIcon {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.6s;
+}
+
+.upArrowIcon {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  transform: rotate(180deg);
+  transition: transform 0.6s;
+}
+
+
+/* dropdown menu starts */
+.dropdownMenu {
+
+  transition: 0.5s;
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  box-shadow: 0 0 7px;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px 20px;
+  width: 250px;
+  animation: dropdownAnimation 0.2s ease-in-out;
+
+}
+
+.dropdownMenu::before {
+  /* for diamond shape at top of dropdown container  */
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+
+  transform: rotate(45deg);
+}
+
+.dropdownMenu ul {
+  text-align: center;
+  padding-left: 0;
+  padding-top: 5px;
+}
+
+.dropdownMenu ul li {
+  padding: 10px 0;
+  /* border-top: 1px solid black;   line*/
+  list-style: none;
+}
+
+.dropdownMenu ul li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.dropdownItem img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.dropdownItem a {
+  max-width: 100px;
+  margin-left: 10px;
+  transition: 1s;
+  text-decoration: none;
+}
+
+.dropdownItemContentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addBtn {
+  float: right;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.addIcon {
+  font-size: 15px;
+}
+
+/* dropdown menu ends */
+.copyright {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.copyrightTxt {
+  text-align: center;
+  font-size: 8px;
+}
+
+
+@keyframes dropdownAnimation {
+  0% {
+    .dropdownMenu {
+      top: 0px;
+    }
+  }
+
+  50% {
+    top: 150px;
+  }
+
+  100% {
+    top: 100px;
+  }
+}
